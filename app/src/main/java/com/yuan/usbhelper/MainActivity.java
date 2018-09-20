@@ -50,4 +50,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
         }
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        USBHelper.getInstance(this).close();
+    }
 }
